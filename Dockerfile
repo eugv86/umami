@@ -42,12 +42,7 @@ RUN set -x \
     && npm install -g pnpm@9.15.5
 
 # Script dependencies
-RUN pnpm \
-    --allow-build='@prisma/engines' \
-    --allow-build='prisma' \
-    --allow-build='@prisma/client' \
-    --allow-build='@prisma/adapter-pg' \
-    add npm-run-all dotenv chalk semver \
+RUN pnpm add npm-run-all dotenv chalk semver \
     prisma@${PRISMA_VERSION} \
     @prisma/client@${PRISMA_VERSION} \
     @prisma/adapter-pg@${PRISMA_VERSION}
